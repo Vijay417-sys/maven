@@ -1,0 +1,352 @@
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ sudo apt update
+[sudo] password for vijay-hosapeti: 
+Sorry, try again.
+[sudo] password for vijay-hosapeti: 
+Hit:1 https://brave-browser-apt-release.s3.brave.com stable InRelease                                                                                                                        
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease                                                          
+Hit:3 http://security.ubuntu.com/ubuntu noble-security InRelease                          
+Hit:4 https://packages.microsoft.com/repos/vscode stable InRelease  
+Hit:5 https://dl.google.com/linux/chrome/deb stable InRelease       
+Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+56 packages can be upgraded. Run 'apt list --upgradable' to see them.
+N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'https://brave-browser-apt-release.s3.brave.com stable InRelease' doesn't support architecture 'i386'
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ mvn -v
+Apache Maven 3.8.7
+Maven home: /usr/share/maven
+Java version: 21.0.6, vendor: Ubuntu, runtime: /usr/lib/jvm/java-21-openjdk-amd64
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.11.0-21-generic", arch: "amd64", family: "unix"
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ mvn archetype:generate \
+    -DgroupId=com.example \
+    -DartifactId=my-app \
+    -DarchetypeArtifactId=maven-archetype-quickstart \
+    -DinteractiveMode=false
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.example:my-app >-------------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> maven-archetype-plugin:3.3.1:generate (default-cli) > generate-sources @ my-app >>>
+[INFO] 
+[INFO] <<< maven-archetype-plugin:3.3.1:generate (default-cli) < generate-sources @ my-app <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-archetype-plugin:3.3.1:generate (default-cli) @ my-app ---
+[INFO] Generating project in Batch mode
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: basedir, Value: /home/vijay-hosapeti/.local/share/Trash/files/my-app.4
+[INFO] Parameter: package, Value: com.example
+[INFO] Parameter: groupId, Value: com.example
+[INFO] Parameter: artifactId, Value: my-app
+[INFO] Parameter: packageName, Value: com.example
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.632 s
+[INFO] Finished at: 2025-04-11T00:19:40+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:3.3.1:generate (default-cli) on project my-app: Unable to add module to the current project as it is not of packaging type 'pom' -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ cd ~/Desktop/6th\ SEM/DEVOPS\ LAB/
+rm -rf my-app
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB$ mvn archetype:generate \
+    -DgroupId=com.example \
+    -DartifactId=my-app \
+    -DarchetypeArtifactId=maven-archetype-quickstart \
+    -DarchetypeVersion=1.4 \
+    -DinteractiveMode=false
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> maven-archetype-plugin:3.3.1:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< maven-archetype-plugin:3.3.1:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- maven-archetype-plugin:3.3.1:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Batch mode
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: maven-archetype-quickstart:1.4
+[INFO] ----------------------------------------------------------------------------
+[INFO] Parameter: groupId, Value: com.example
+[INFO] Parameter: artifactId, Value: my-app
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] Parameter: package, Value: com.example
+[INFO] Parameter: packageInPathFormat, Value: com/example
+[INFO] Parameter: package, Value: com.example
+[INFO] Parameter: groupId, Value: com.example
+[INFO] Parameter: artifactId, Value: my-app
+[INFO] Parameter: version, Value: 1.0-SNAPSHOT
+[INFO] Project created from Archetype in dir: /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.757 s
+[INFO] Finished at: 2025-04-11T00:21:21+05:30
+[INFO] ------------------------------------------------------------------------
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB$ cd my-app
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ mvn clean package
+java -cp target/my-app-1.0-SNAPSHOT.jar com.example.App
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.example:my-app >-------------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.pom (5.2 kB at 4.2 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/31/maven-plugins-31.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/31/maven-plugins-31.pom (10 kB at 27 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.jar (30 kB at 109 kB/s)
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ my-app ---
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] Source option 7 is no longer supported. Use 8 or later.
+[ERROR] Target option 7 is no longer supported. Use 8 or later.
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.639 s
+[INFO] Finished at: 2025-04-11T00:24:12+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile (default-compile) on project my-app: Compilation failure: Compilation failure: 
+[ERROR] Source option 7 is no longer supported. Use 8 or later.
+[ERROR] Target option 7 is no longer supported. Use 8 or later.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Error: Could not find or load main class com.example.App
+Caused by: java.lang.ClassNotFoundException: com.example.App
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ cat src/main/java/com/example/App.java
+package com.example;
+
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello from Maven!");
+    }
+}
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ mvn clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.example:my-app >-------------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ my-app ---
+[INFO] Deleting /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ my-app ---
+[INFO] Surefire report directory: /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ my-app ---
+[INFO] Building jar: /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.994 s
+[INFO] Finished at: 2025-04-11T00:25:30+05:30
+[INFO] ------------------------------------------------------------------------
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ java -cp target/my-app-1.0-SNAPSHOT.jar com.example.App
+Hello from Maven!
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ mvn clean package
+java -cp target/my-app-1.0-SNAPSHOT.jar com.example.App
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< com.example:my-app >-------------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ my-app ---
+[INFO] Deleting /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ my-app ---
+[INFO] Surefire report directory: /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.example.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ my-app ---
+[INFO] Building jar: /home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.994 s
+[INFO] Finished at: 2025-04-11T00:26:03+05:30
+[INFO] ------------------------------------------------------------------------
+Hello from Maven!
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ gradle -v
+openjdk version "21.0.6" 2025-01-21
+OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+
+------------------------------------------------------------
+Gradle 4.4.1
+------------------------------------------------------------
+
+Build time:   2012-12-21 00:00:00 UTC
+Revision:     none
+
+Groovy:       2.4.21
+Ant:          Apache Ant(TM) version 1.10.14 compiled on September 25 2023
+JVM:          21.0.6 (Ubuntu 21.0.6+7-Ubuntu-124.04.1)
+OS:           Linux 6.11.0-21-generic amd64
+
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ gradle init --type java-application
+openjdk version "21.0.6" 2025-01-21
+OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+
+BUILD SUCCESSFUL in 0s
+2 actionable tasks: 2 executed
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ mkdir -p src/main/java/com/example
+cp src/main/java/com/example/App.java src/main/java/com/example/
+cp: 'src/main/java/com/example/App.java' and 'src/main/java/com/example/App.java' are the same file
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ nano build.gradle
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ 
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ gradle clean build
+openjdk version "21.0.6" 2025-01-21
+OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file '/home/vijay-hosapeti/Desktop/6th SEM/DEVOPS LAB/my-app/build.gradle' line: 18
+
+* What went wrong:
+A problem occurred evaluating root project 'my-app'.
+> Could not find method application() for arguments [build_6if2l5898lrqm2borfklbbh55$_run_closure3@2d023815] on root project 'my-app' of type org.gradle.api.Project.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 0s
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ nano build.gradle
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ gradle clean build
+openjdk version "21.0.6" 2025-01-21
+OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+Download https://repo.maven.apache.org/maven2/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.pom
+Download https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/32.1.3-jre/guava-parent-32.1.3-jre.pom
+Download https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.pom
+Download https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.21.1/error_prone_parent-2.21.1.pom
+Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.pom
+Download https://repo.maven.apache.org/maven2/com/google/guava/guava/32.1.3-jre/guava-32.1.3-jre.jar
+Download https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar
+Download https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar
+
+BUILD SUCCESSFUL in 7s
+8 actionable tasks: 7 executed, 1 up-to-date
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ gradle run
+openjdk version "21.0.6" 2025-01-21
+OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+
+> Task :run 
+Hello from Maven!
+
+
+BUILD SUCCESSFUL in 0s
+2 actionable tasks: 1 executed, 1 up-to-date
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ 
+Copy
+gradle jar
+Command 'Copy' not found, did you mean:
+  command 'ropy' from deb libdisorder-tools (0.0.2+git20130809.8062ee1-4)
+Try: sudo apt install <deb name>
+openjdk version "21.0.6" 2025-01-21
+OpenJDK Runtime Environment (build 21.0.6+7-Ubuntu-124.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.6+7-Ubuntu-124.04.1, mixed mode, sharing)
+
+BUILD SUCCESSFUL in 0s
+2 actionable tasks: 2 up-to-date
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ java -jar build/libs/my-app.jar
+Error: Unable to access jarfile build/libs/my-app.jar
+vijay-hosapeti@vijay-hosapeti-HP-Laptop-15s-fq5xxx:~/Desktop/6th SEM/DEVOPS LAB/my-app$ 
+
+
