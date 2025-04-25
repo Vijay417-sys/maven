@@ -1,5 +1,5 @@
 //After opening the AppTest.java copy the below code and paste it in that file then save it.
-package com.demo;
+package com.example.demo;
 import org.junit.Assert;
 import org.junit.Test;
 public class AppTest {
